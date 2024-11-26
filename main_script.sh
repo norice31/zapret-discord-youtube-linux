@@ -9,8 +9,8 @@ CONF_FILE="$BASE_DIR/conf.env"
 STOP_SCRIPT="$BASE_DIR/stop_and_clean_nft.sh"
 
 # Флаг отладки
-DEBUG=true
-NOINTERACTIVE=true
+DEBUG=false
+NOINTERACTIVE=false
 
 bash $STOP_SCRIPT
 _term() {
@@ -201,7 +201,6 @@ start_nfqws() {
 main() {
     DEBUG=true
     NOINTERACTIVE=true
-    shift
     load_config
 
     check_dependencies
