@@ -9,8 +9,8 @@ CONF_FILE="$BASE_DIR/conf.env"
 STOP_SCRIPT="$BASE_DIR/stop_and_clean_nft.sh"
 
 # Флаг отладки
-DEBUG=false
-NOINTERACTIVE=false
+DEBUG=true
+NOINTERACTIVE=true
 
 sudo $STOP_SCRIPT
 _term() {
