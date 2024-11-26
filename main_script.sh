@@ -199,14 +199,10 @@ start_nfqws() {
 
 # Основная функция
 main() {
-    if [[ "$1" == "-debug" ]]; then
-        DEBUG=true
-        shift
-    elif [[ "$1" == "-nointeractive" ]]; then
-        NOINTERACTIVE=true
-        shift
-        load_config
-    fi
+    DEBUG=true
+    NOINTERACTIVE=true
+    shift
+    load_config
 
     check_dependencies
     setup_repository
