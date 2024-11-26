@@ -90,9 +90,10 @@ find_bat_files() {
 
 # Функция для выбора стратегии
 select_strategy() {
-    cd "zapret-latest" || handle_error "Не удалось перейти в директорию $REPO_DIR"
+    cd "$REPO_DIR" || handle_error "Не удалось перейти в директорию $REPO_DIR"
 
     if $NOINTERACTIVE; then
+        ls
         if [ ! -f "$strategy" ]; then
             handle_error "Указанный .bat файл стратегии $strategy не найден"
         fi
