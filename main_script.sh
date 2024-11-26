@@ -12,7 +12,7 @@ STOP_SCRIPT="$BASE_DIR/stop_and_clean_nft.sh"
 DEBUG=true
 NOINTERACTIVE=true
 
-sudo $STOP_SCRIPT
+bash $STOP_SCRIPT
 _term() {
     sudo /bin/bash $STOP_SCRIPT
 }
@@ -90,7 +90,7 @@ find_bat_files() {
 
 # Функция для выбора стратегии
 select_strategy() {
-    cd "$REPO_DIR" || handle_error "Не удалось перейти в директорию $REPO_DIR"
+    cd "zapret-latest" || handle_error "Не удалось перейти в директорию $REPO_DIR"
 
     if $NOINTERACTIVE; then
         if [ ! -f "$strategy" ]; then
