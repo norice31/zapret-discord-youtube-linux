@@ -3,10 +3,10 @@
 # Константы
 SERVICE_NAME="zapret_discord_youtube"
 SERVICE_FILE="/etc/systemd/system/$SERVICE_NAME.service"
-HOME_DIR_PATH="$(dirname "$0")"
-MAIN_SCRIPT_PATH="$(dirname "$0")/main_script.sh"  # Путь к основному скрипту
-CONF_FILE="$(dirname "$0")/conf.env"  # Путь к файлу конфигурации
-STOP_SCRIPT="$(dirname "$0")/stop_and_clean_nft.sh"  # Путь к скрипту остановки и очистки nftables
+HOME_DIR_PATH="/mnt/server/zapret-discord-youtube-linux"
+MAIN_SCRIPT_PATH="/mnt/server/zapret-discord-youtube-linux/main_script.sh"  # Путь к основному скрипту
+CONF_FILE="/mnt/server/zapret-discord-youtube-linux/conf.env"  # Путь к файлу конфигурации
+STOP_SCRIPT="/mnt/server/zapret-discord-youtube-linux/stop_and_clean_nft.sh"  # Путь к скрипту остановки и очистки nftables
 
 # Функция для проверки существования conf.env и необходимых полей
 check_conf_file() {
