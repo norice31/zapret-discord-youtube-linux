@@ -165,19 +165,6 @@ setup_nftables() {
     local chain_name="output"
     local rule_comment="Added by zapret script"
 
-    log "Настройка nftables с очисткой только помеченных правил..."
-
-    # Удаляем существующую таблицу, если она была создана этим скриптом
-    if sudo nft list tables | grep -q "$table_name"; then
-        sudo nft flush chain $table_name $chain_name
-        sudo nft delete chain $table_name $chain_name
-        sudo nft delete table $table_name
-    fi
-
-    # Добавляем таблицу и цепочку
-    sudo nft add table $table_name
-    sudo nft add chain $table_name $chain_name { type filter hook output priority 0\; }
-
     # Добавляем правила с пометкой
     for queue_num in "${!nft_rules[@]}"; do
         sudo nft add rule $table_name $chain_name oifname \"$interface\" ${nft_rules[$queue_num]} comment \"$rule_comment\" ||
