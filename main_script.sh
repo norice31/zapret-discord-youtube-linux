@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Константы
-BASE_DIR="$(realpath "$(dirname "$0")")"
+BASE_DIR="/mnt/server/zapret-discord-youtube-linux"
 REPO_DIR="$BASE_DIR/zapret-latest"
 REPO_URL="https://github.com/Flowseal/zapret-discord-youtube"
 NFQWS_PATH="$BASE_DIR/nfqws"
